@@ -4,4 +4,4 @@
 [bedtools v2.27.1](https://github.com/arq5x/bedtools2/tree/v2.27.1) <br>
 [Minimac4 v4.1.5](https://github.com/statgen/Minimac4/tree/v4.1.5) <br>
 [aggRsquare](https://github.com/yukt/aggRSquare) <br>
-
+[cyvcf2 v0.31.1](https://github.com/brentp/cyvcf2) <br>
