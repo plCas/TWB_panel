@@ -4,7 +4,7 @@
 
 2. Turn VCF file to BED file of imputation (all imputed samples). [02.make_imp_SV_bed.py](02.make_imp_SV_bed.py)
 
-3. Generate Bed file of WGS (all WGS samples). <br>
+3. Generate BED file of WGS (all WGS samples). <br>
   a. Intersect imputation and WGS for each sample. [03.intersect_imp_wgs.sh](03.intersect_imp_wgs.sh) <br>
   b. Merge all samples. [04.make_all_smaple_bed.wgs.R](04.make_all_smaple_bed.wgs.R) <br>
 
