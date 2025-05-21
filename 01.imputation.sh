@@ -11,7 +11,7 @@ OUT=/../array_n96_imputed
 mkdir -p $OUT
 
 # Run imputation
-/data6/poliang/tools/Minimac4/build/minimac4 \
+/../Minimac4/build/minimac4 \
   --threads $THREADS \
   --format GT \
   --all-typed-sites \
