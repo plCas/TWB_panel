@@ -1,6 +1,6 @@
 # Concordance Rate by MAF
 
-1. Generate imputed SVs VCF file (AC > 0). [01.bcftools_filter_imp.sh](01.bcftools_filter_imp.sh)
+1. Generate imputed SVs VCF file (AC > 0). [01.bcftools_filter_imp.sh](01.bcftools_filter_imp.sh); VCF is a product of [02.add_svtype.py](02.add_svtype.py)
 
 2. Generate a BED file from the VCF file for all imputed samples. [02.make_imp_SV_bed.py](02.make_imp_SV_bed.py)
 
