@@ -67,21 +67,14 @@ function intersect_bedfiles(){
         fi
 }
 
-ARRAY=($(sed '1d' /data6/SV_validate/WGS_n100/array_data/WGS_array_ID.txt | awk '{print $2}'))
-
+ARRAY=($(awk '{print $1}' /data6/poliang/imputation/TWB_panel_SNV_SV_02192025/WGS_validation/prepare_validation_data/vcfs/TOPMed/TOPMed.sample.list))
 NUM=${#ARRAY[@]}
 
-mask="282PM18493375C04_08R_282PM18493375C04_08R 164PMfd18485985E04_TCVG_0005_164PMfd18485985E04_TCVG_0005 399PMfd20274696E05_09Y_399PMfd20274696E05_09Y 518PMfs11563238F05_TCVG_0209_518PMfs11563238F05_TCVG_0209"
-
 for ((i = 0; i < $NUM; i++));do
-    output_sample_name=${ARRAY[$i]}_${ARRAY[$i]}
-    if [[ " $mask " =~ " $output_sample_name " ]];then
-        echo "$i $output_sample_name masked"
-    else
+    	output_sample_name=${ARRAY[$i]}
         echo "$i $output_sample_name"
 	imp_all_bed=/../by_sample/bed_files/imp/R2_0/$output_sample_name.bed
         wgs_all_bed=/../by_sample/bed_files/wgs/$output_sample_name.bed
         intersect_bedfiles "INS" "$imp_all_bed" "$wgs_all_bed" >  $OUT/$output_sample_name.bed
         intersect_bedfiles "DEL" "$imp_all_bed" "$wgs_all_bed" >> $OUT/$output_sample_name.bed
-    fi
 done
